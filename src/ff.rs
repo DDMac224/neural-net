@@ -31,12 +31,6 @@ impl fmt::Display for FFError {
     }
 }
 
-impl FFError {
-    fn new(message: String) -> Self {
-        Self { message }
-    }
-}
-
 pub fn lin_forward<T: Node>(input: Layer<T>, weights: Vec<Layer<T>>) -> Result<Layer<T>, FFError> {
     let mut cache = input.clone();
     for layer in weights {
